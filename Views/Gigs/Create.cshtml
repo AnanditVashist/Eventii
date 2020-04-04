@@ -1,0 +1,57 @@
+﻿@model GigHub.ViewModel.GigFormViewModel
+    
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create a New Gig</h2>
+@using (Html.BeginForm("Create","Gigs",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(g=>g.Venue, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(g=>g.Venue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(g=>g.Venue, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(g=>g.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(g=>g.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(g=>g.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(g=>g.Time, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(g=>g.Time, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(g=>g.Time, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(g=>g.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(g=>g.Genre,new SelectList(Model.Genres,"Id","Name"),"")
+                @Html.ValidationMessageFor(g=>g.Genre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

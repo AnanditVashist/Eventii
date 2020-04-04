@@ -1,4 +1,6 @@
 ﻿using GigHub.Models;
+using GigHub.ViewModel;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace GigHub.Controllers
@@ -17,8 +19,11 @@ namespace GigHub.Controllers
 
         public ActionResult Create()
         {
-
-            return View();
+            var viewModel = new GigFormViewModel
+            {
+                Genres = DB.Genre.ToList()
+            };
+            return View(viewModel);
         }
     }
 }
