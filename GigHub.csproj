@@ -186,6 +186,10 @@
     <Compile Include="Migrations\202004032250461_AddedRequiredConevtionsToGigsAndGenre.Designer.cs">
       <DependentUpon>202004032250461_AddedRequiredConevtionsToGigsAndGenre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004042257586_AddedForiegnKeyInAristAndGenreModel.cs" />
+    <Compile Include="Migrations\202004042257586_AddedForiegnKeyInAristAndGenreModel.Designer.cs">
+      <DependentUpon>202004042257586_AddedForiegnKeyInAristAndGenreModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -280,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004032250461_AddedRequiredConevtionsToGigsAndGenre.resx">
       <DependentUpon>202004032250461_AddedRequiredConevtionsToGigsAndGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004042257586_AddedForiegnKeyInAristAndGenreModel.resx">
+      <DependentUpon>202004042257586_AddedForiegnKeyInAristAndGenreModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
